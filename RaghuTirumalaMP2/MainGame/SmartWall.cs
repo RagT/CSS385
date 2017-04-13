@@ -44,6 +44,7 @@ namespace MainGame
             }
             CollisionWithHero(hero);
             ticks--;
+            XNACS1Base.World.ClampAtWorldBound(boundRect);
         }        
 
         private void HandleAmbient(XNACS1Circle hero, bool chaser)

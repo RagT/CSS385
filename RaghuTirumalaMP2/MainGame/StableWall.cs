@@ -23,6 +23,7 @@ namespace MainGame
         public void Update(XNACS1Circle hero)
         {
             CollisionWithHero(hero);
+            XNACS1Base.World.ClampAtWorldBound(boundRect);
         }
 
         //Handles Collision with the hero
