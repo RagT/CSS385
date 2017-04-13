@@ -27,6 +27,7 @@ namespace MainGame
         private State currentState;
         Random rand;
         private const float SPEED = 0.5f;
+        Chaser chaser = null;
 
         public Bee(XNACS1Circle hero)
         {
@@ -62,6 +63,7 @@ namespace MainGame
         private void HandlePatrolState()
         {
             boundCircle.ShouldTravel = false;
+            boundCircle.Texture = "fish";
             Vector2 next;
             if (travelRight)
             {
@@ -85,12 +87,25 @@ namespace MainGame
             if(CheckHero())
             {
                 currentState = State.Confused;
+                //Create new chaser if there is no existing one
+                if(chaser == null)
+                {
+                    chaser = new Chaser(hero);
+                }
+            }
+            if (chaser != null)
+            {
+                if(!chaser.Update())
+                {
+                    chaser = null;
+                }
             }
         }
 
         private void HandleConfusedState()
         {
             boundCircle.ShouldTravel = true;
+            boundCircle.Texture = "scaredface";
             //Assign random Velocity
             Vector2 dir = new Vector2((float)rand.NextDouble(), (float)rand.NextDouble());
             Vector2 newVelocity = dir * SPEED;

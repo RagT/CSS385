@@ -28,8 +28,9 @@ namespace MainGame
         protected override void InitializeWorld()
         {
             m_Hero = new Hero((World.WorldMax + World.WorldMin) / 2);
-            SetAppWindowPixelDimension(false, 600, 400);
+            SetAppWindowPixelDimension(false, 700, 500);
             m_Bee = new Bee(m_Hero.GetCircle());
+            World.SetBackgroundTexture("water");
         }
 
         

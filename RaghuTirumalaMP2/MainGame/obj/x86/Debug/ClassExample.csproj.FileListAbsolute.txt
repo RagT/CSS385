@@ -1,2 +1,0 @@
-C:\Users\Raghu\Documents\CSS_385\Week1\1.EmptyTemplate\ClassExample\bin\WindowsGL\Debug\ClassExample.exe.config
-C:\Users\Raghu\Documents\CSS_385\RaghuTirumalaMP2\ClassExample\bin\WindowsGL\Debug\ClassExample.exe.config

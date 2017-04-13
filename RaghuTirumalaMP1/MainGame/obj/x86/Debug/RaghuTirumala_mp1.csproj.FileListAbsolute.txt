@@ -19,3 +19,6 @@ C:\Users\Raghu\Documents\CSS_385\RaghuTirumalaMP1\MainGame\obj\x86\Debug\RaghuTi
 C:\Users\Raghu\Documents\CSS_385\RaghuTirumalaMP1\MainGame\obj\x86\Debug\RaghuTirumala_mp1.csproj.GenerateResource.Cache
 C:\Users\Raghu\Documents\CSS_385\RaghuTirumalaMP1\MainGame\obj\x86\Debug\FunMP1.exe
 C:\Users\Raghu\Documents\CSS_385\RaghuTirumalaMP1\MainGame\obj\x86\Debug\FunMP1.pdb
+C:\Users\Raghu\Documents\CSS_385\CSS385\RaghuTirumalaMP1\MainGame\bin\WindowsGL\Debug\FunMP1.exe.config
+C:\Users\Raghu\Documents\CSS_385\CSS385\RaghuTirumalaMP1\MainGame\obj\x86\Debug\FunMP1.exe
+C:\Users\Raghu\Documents\CSS_385\CSS385\RaghuTirumalaMP1\MainGame\obj\x86\Debug\FunMP1.pdb
