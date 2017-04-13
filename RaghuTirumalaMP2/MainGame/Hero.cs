@@ -15,7 +15,7 @@ namespace MainGame
         XNACS1Circle boundCircle = null;
         public Hero(Vector2 location)
         {
-            boundCircle = new XNACS1Circle(location, 3);
+            boundCircle = new XNACS1Circle(location, 4);
             boundCircle.Texture = "diver";
         }
 

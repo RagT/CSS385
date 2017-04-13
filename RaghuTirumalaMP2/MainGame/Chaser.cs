@@ -14,16 +14,17 @@ namespace MainGame
     {
         XNACS1Circle boundCircle = null;
         XNACS1Circle hero = null;
-        const float TURN_RATE = 0.10f;
+        const float TURN_RATE = 0.05f;
         int TickCount;
 
         public Chaser(XNACS1Circle hero)
         {
             this.hero = hero;
-            boundCircle = new XNACS1Circle(new Vector2(1.5f, 1.5f), 1.5f);
+            boundCircle = new XNACS1Circle(new Vector2(1.5f, 1.5f), 3);
             boundCircle.ShouldTravel = true;
             boundCircle.Velocity = new Vector2(1.1f, 0);
             TickCount = 800;
+            boundCircle.Texture = "shark";
         }
 
         public bool Update()

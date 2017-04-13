@@ -36,7 +36,7 @@ namespace MainGame
             float xLoc = (float) rand.NextDouble() * XNACS1Base.World.WorldDimension.X;
             float yLoc = (float)rand.NextDouble() * XNACS1Base.World.WorldDimension.Y;
             mInitPos = new Vector2(xLoc, yLoc);
-            boundCircle = new XNACS1Circle(mInitPos, 1.5f);
+            boundCircle = new XNACS1Circle(mInitPos, 3f);
             this.hero = hero;
 
             //Should be drawn above other objects
@@ -44,6 +44,11 @@ namespace MainGame
 
             currentState = State.Patrol;
             SetSineCurve();
+        }
+
+        public bool IsChaser()
+        {
+            return chaser != null;
         }
 
         public void Update()

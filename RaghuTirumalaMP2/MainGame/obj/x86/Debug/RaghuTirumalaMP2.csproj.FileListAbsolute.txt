@@ -17,3 +17,7 @@ C:\Users\Raghu\Documents\CSS_385\CSS385\RaghuTirumalaMP2\MainGame\obj\x86\Debug\
 C:\Users\Raghu\Documents\CSS_385\CSS385\RaghuTirumalaMP2\MainGame\obj\x86\Debug\MainGame.pdb
 C:\Users\Raghu\Documents\CSS_385\CSS385\RaghuTirumalaMP2\MainGame\bin\WindowsGL\Debug\Lidgren.Network.dll
 C:\Users\Raghu\Documents\CSS_385\CSS385\RaghuTirumalaMP2\MainGame\bin\WindowsGL\Debug\Lidgren.Network.xml
+C:\Users\Raghu\Documents\CSS_385\CSS385\RaghuTirumalaMP2\MainGame\bin\WindowsGL\Debug\Content\Resources\Textures\shark.png
+C:\Users\Raghu\Documents\CSS_385\CSS385\RaghuTirumalaMP2\MainGame\bin\WindowsGL\Debug\Content\Resources\Textures\ambientWall.jpg
+C:\Users\Raghu\Documents\CSS_385\CSS385\RaghuTirumalaMP2\MainGame\bin\WindowsGL\Debug\Content\Resources\Textures\angryWall.jpg
+C:\Users\Raghu\Documents\CSS_385\CSS385\RaghuTirumalaMP2\MainGame\bin\WindowsGL\Debug\Content\Resources\Textures\stopWall.jpg
