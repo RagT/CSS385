@@ -16,7 +16,6 @@ namespace MainGame
         public Hero(Vector2 location)
         {
             boundCircle = new XNACS1Circle(location, 4);
-            boundCircle.Texture = "diver";
         }
 
         //Update Hero's position based on left stick input
@@ -26,6 +25,14 @@ namespace MainGame
             if(leftStick.Length() > 1.0f)
             {
                 leftStick.Normalize();
+            }
+            if(leftStick.X > 0)
+            {
+                boundCircle.Texture = "diver_right";
+            }
+            else
+            {
+                boundCircle.Texture = "diver_left";
             }
             boundCircle.Center += leftStick;
             XNACS1Base.World.ClampAtWorldBound(boundCircle);

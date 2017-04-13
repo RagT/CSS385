@@ -28,6 +28,8 @@ namespace MainGame
         Random rand;
         private const float SPEED = 0.5f;
         Chaser chaser = null;
+        int avoided = 0;
+        int hit = 0;
 
         public Bee(XNACS1Circle hero)
         {
@@ -63,19 +65,21 @@ namespace MainGame
                     break;
             }
             XNACS1Base.World.ClampAtWorldBound(boundCircle);
+            EchoStatus();
         }
 
         private void HandlePatrolState()
         {
             boundCircle.ShouldTravel = false;
-            boundCircle.Texture = "fish";
             Vector2 next;
             if (travelRight)
             {
+                boundCircle.Texture = "fishright";
                 next = new Vector2(boundCircle.CenterX + SPEED, mInitPos.Y + GetYValue(boundCircle.CenterX));
             }
             else
             {
+                boundCircle.Texture = "fishleft";
                 next = new Vector2(boundCircle.CenterX - SPEED, mInitPos.Y + GetYValue(boundCircle.CenterX));
             }
             Vector2 dir = next - boundCircle.Center;
@@ -96,15 +100,11 @@ namespace MainGame
                 if(chaser == null)
                 {
                     chaser = new Chaser(hero);
+                    XNACS1Base.PlayBackgroundAudio("", 1f);
+                    XNACS1Base.PlayACue("danger");
                 }
             }
-            if (chaser != null)
-            {
-                if(!chaser.Update())
-                {
-                    chaser = null;
-                }
-            }
+            UpdateChaser();
         }
 
         private void HandleConfusedState()
@@ -121,6 +121,7 @@ namespace MainGame
             {
                 currentState = State.Patrol;
             }
+            UpdateChaser();
         }
 
         private bool CheckHero()
@@ -140,6 +141,33 @@ namespace MainGame
             mAmplitude = (0.18f + (float) rand.NextDouble() * 0.04f) * XNACS1Base.World.WorldMax.Y;
             mPeriods = 4f + (float)rand.NextDouble();
             mFrequencyScale = mPeriods * 2f * (float)(Math.PI) / XNACS1Base.World.WorldDimension.X;
+        }
+
+        private void UpdateChaser()
+        {
+            if (chaser != null)
+            {
+                int returnCode = chaser.Update();
+                if (returnCode == 1)
+                {
+                    hit++;
+                    chaser = null;
+                    XNACS1Base.PlayBackgroundAudio("bg", 1f);
+                }
+                if (returnCode == 2)
+                {
+                    avoided++;
+                    chaser = null;
+                    XNACS1Base.PlayBackgroundAudio("bg", 1f);
+                }
+
+            }
+        }
+
+        private void EchoStatus()
+        {
+            XNACS1Base.EchoToTopStatus("Hero hit by chaser " + hit + " time(s).");
+            XNACS1Base.EchoToBottomStatus("Hero avoided chaser " + avoided + " time(s).");
         }
     }
 }

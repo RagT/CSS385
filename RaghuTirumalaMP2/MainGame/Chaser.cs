@@ -27,7 +27,7 @@ namespace MainGame
             boundCircle.Texture = "shark";
         }
 
-        public bool Update()
+        public int Update()
         {
             if(!boundCircle.Collided(hero) && IsInWorldBounds() && TickCount > 0)
             {
@@ -45,12 +45,19 @@ namespace MainGame
                     boundCircle.VelocityDirection = boundCircle.FrontDirection;
                 }
                 TickCount--;
-                return true; 
+                return 0; 
             }
             else
             {
+                if(boundCircle.Collided(hero))
+                {
+                    Destroy();
+                    XNACS1Base.PlayACue("die");
+                    return 1; //hit hero
+                }
                 Destroy();
-                return false;
+                XNACS1Base.PlayACue("avoided");
+                return 2; //avoided                
             }
         }
 

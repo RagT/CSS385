@@ -40,6 +40,7 @@ namespace MainGame
 
             m_Bee = new Bee(m_Hero.GetCircle());
             World.SetBackgroundTexture("water");
+            PlayBackgroundAudio("bg", 0.5f);
         }
 
         
